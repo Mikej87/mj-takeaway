@@ -2,33 +2,29 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import MJLog, Meal, Dish
 
-
-def add_log(request):
-    dishes = Dish.objects.all()  # Get all dishes from DB
-    return render(request, 'add_log.html', {'dishes': dishes})
-
-
-def meal_list(request):
-    dishes = Dish.objects.all()  # Or whatever your model is called
-    return render(request, 'meallist.html', {'dishes': dishes})
-
-
+@login_required
 def add_log(request):
     if request.method == "POST":
-        # Create logic
-        meal_id = request.POST.get('meal')
+        # Get the 'dish' ID from the form select name="dish"
+        dish_id = request.POST.get('dish') 
+        
         MJLog.objects.create(
             user=request.user,
-            meal_id=meal_id,
+            dish_id=dish_id, # Ensure this field name matches your MJLog model
             grease_level=request.POST.get('grease'),
             stomach_feeling=request.POST.get('feeling')
         )
         return redirect('history')
     
-    meals = Meal.objects.all()
-    return render(request, 'add_log.html', {'meals': meals})
+    # This part runs for the GET request (to show the form)
+    dishes = Dish.objects.all() 
+    return render(request, 'add_log.html', {'dishes': dishes})
+
+def meallist(request):
+    dishes = Dish.objects.all()
+    return render(request, 'meallist.html', {'dishes': dishes})
+
 @login_required
 def history(request):
-    # Display logic
     logs = MJLog.objects.filter(user=request.user)
     return render(request, 'history.html', {'logs': logs})
