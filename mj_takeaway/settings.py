@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-ROOT_URLCONF = 'mj_takeaway.urls'
+ROOT_URLCONF = 'MJ_Takeaway.urls'
+WSGI_APPLICATION = 'MJ_Takeaway.wsgi.application'
 
 # SECURITY: Use an environment variable for Heroku (#9 & #10)
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-local-development-key')
@@ -32,11 +33,11 @@ DATABASES = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware', # Fixes E410
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Fixes E410
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware', # Fixes E408
-    'django.contrib.messages.middleware.MessageMiddleware', # Fixes E409
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Fixes E408
+    'django.contrib.messages.middleware.MessageMiddleware',  # Fixes E409
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
