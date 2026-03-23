@@ -2,15 +2,15 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-ROOT_URLCONF = 'MJ_Takeaway.urls'
-WSGI_APPLICATION = 'MJ_Takeaway.wsgi.application'
+ROOT_URLCONF = 'mj_takeaway.urls'
+WSGI_APPLICATION = 'mj_takeaway.wsgi.application'
 
 # SECURITY: Use an environment variable for Heroku (#9 & #10)
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-local-development-key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['#', '127.0.0.1', 'localhost',]
+ALLOWED_HOSTS = ['#', '127.0.0.1', 'localhost', '.herokuapp.com',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
