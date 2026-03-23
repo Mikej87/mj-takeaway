@@ -9,9 +9,12 @@ class Meal(models.Model):
     shop = models.ForeignKey(ChipShop, on_delete=models.CASCADE)
     item_name = models.CharField(max_length=100) # e.g., "Grilled Cod"
     is_fried = models.BooleanField(default=True)
-    
+
+class Dish(models.Model):
+    name = models.CharField(max_length=100)
+
     def __str__(self):
-        return f"{self.item_name} from {self.shop.name}"
+        return self.name
 
 class MJLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
