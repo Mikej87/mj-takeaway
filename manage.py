@@ -6,7 +6,7 @@ import sys
 def main():
     """Run administrative tasks."""
     # This points Django to your project settings (Requirement #10: Security)
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mj_takeawaysettings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mj_takeaway.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

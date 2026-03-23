@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import MJLog, Meal
 
@@ -15,8 +16,8 @@ def add_log(request):
     
     meals = Meal.objects.all()
     return render(request, 'add_log.html', {'meals': meals})
-
+@login_required
 def history(request):
     # Display logic
     logs = MJLog.objects.filter(user=request.user)
-    return render(request, 'history.html', {'logs': logs})
+    return render(request, 'tracker/history.html', {'logs': logs})
