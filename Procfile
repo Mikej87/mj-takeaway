@@ -1,1 +1,1 @@
-web: gunicorn MJ_Takeaway.wsgi
+web: gunicorn mj_takeaway.wsgi
