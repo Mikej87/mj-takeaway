@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import ChipShop, Meal, MJLog # Import your Fish & Chip models
+from .models import ChipShop, Meal, MJLog, Dish  
 
 # This makes the ChipShop table editable in the admin panel
 @admin.register(ChipShop)
@@ -18,3 +18,5 @@ class MealAdmin(admin.ModelAdmin):
 class MJLogAdmin(admin.ModelAdmin):
     list_display = ('user', 'meal', 'grease_level', 'created_at')
     readonly_fields = ('created_at',) # Prevents changing the date manually
+
+    admin.site.register(Dish)

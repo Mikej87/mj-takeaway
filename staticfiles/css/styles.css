@@ -1,0 +1,93 @@
+.navbar {
+    background-color: #2c3e50 !important;
+    size: 1.2rem;
+    height: 100px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Make the nav links slightly larger and white */
+.nav-link {
+    color: white !important;
+    font-size: 1.1rem;
+}
+
+/* Add a hover effect */
+.nav-link:hover {
+    color: #f1c40f !important; /* Gold color */
+}
+
+/* Add a symbol before the "Log your Chippy Meal" heading */
+h3::before {
+    content: "🐟 "; /* Adds a fish emoji before the title */
+}
+
+/* Add "Max" label after the range slider */
+.form-range::after {
+    content: " (Max 5)";
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Style the card and form fields */
+.card {
+    border-radius: 15px;
+    background-color: #f8f9fa; /* Light grey background */
+}
+
+/* Custom focus color for the select and textarea */
+.form-select:focus, .form-control:focus {
+    border-color: #198754; /* Match the success button green */
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* Change the color of the range slider handle */
+.form-range::-webkit-slider-thumb {
+    background: #198754;
+}
+
+.form-range::-moz-range-thumb {
+    background: #198754;
+}
+
+/* Custom styling for the Save button on hover */
+.btn-success:hover {
+    background-color: #146c43 !important;
+    transform: scale(1.02); /* Slight pop effect */
+    transition: 0.3s;
+}
+
+/* Change the border color when clicking into the dropdown */
+.form-select:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+}
+
+/* Make the text slightly bigger */
+.form-select {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+}
+
+.fishnchips {
+    height: 500px;
+    width: 50%;
+    position: relative;
+    display: block;
+}
+
+/* templates/static/css/styles.css */
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transition: 0.2s ease-in-out;
+}
+
+.card-header h3::before {
+    content: "📋 ";
+}

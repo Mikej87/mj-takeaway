@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MJ Tracker</title>
-     <link href="https://cdn.jsdelivr.net" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link href="https://stackpath.bootstrapcdn.com" rel="stylesheet">
      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
 <body>
@@ -14,7 +14,7 @@
         <div class="container">
             <a class="navbar-brand" href="/">MJ Fish & Chips</a>
             <div class="navbar-nav flex-row">
-                <a class="nav-link me-3" href="{% url 'history' %}">My History</a>
+                <a class="nav-link me-3" href="{% url 'history' %}">Home</a>
                 <a class="nav-link" href="{% url 'add_log' %}">+ Log Meal</a>
             </div>
         </div>

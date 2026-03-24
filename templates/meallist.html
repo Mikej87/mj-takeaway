@@ -10,18 +10,18 @@
             </div>
             <ul class="list-group list-group-flush">
                 {% for dish in dishes %}
-                    <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
-                        <div>
-                            <span class="h5 mb-0">{{ dish.name }}</span>
-                            <small class="text-muted d-block">{{ dish.description|default:"Standard chippy favorite" }}</small>
-                        </div>
-                        <span class="badge bg-info rounded-pill">Selectable</span>
-                    </li>
-                {% empty %}
-                    <li class="list-group-item text-center p-4 text-muted">
-                        No dishes added yet. Add some in the <a href="/admin">Admin panel</a>!
-                    </li>
-                {% endfor %}
+    <li class="list-group-item p-3 d-flex justify-content-between align-items-center">
+        <div>
+            <!-- Use .item_name to match the Meal model field -->
+            <span class="h5 mb-0">{{ dish.item_name }}</span>
+            <small class="text-muted d-block">{{ dish.shop.name|default:"Local Chippy" }}</small>
+        </div>
+        <span class="badge bg-info rounded-pill">Selectable</span>
+    </li>
+{% empty %}
+    <!-- This runs if the 'Meal' table is empty -->
+    <li class="list-group-item text-center p-4 text-muted">No meals found in the tracker.</li>
+{% endfor %}
             </ul>
         </div>
         
